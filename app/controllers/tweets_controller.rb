@@ -23,8 +23,8 @@ class TweetsController < ApplicationController
     tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
     render json:{ keyword: tag }
   end
-  
-  private
+
+private
 
   def tweet_params
     params.require(:tweets_tag).permit(:message, :name)
